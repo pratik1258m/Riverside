@@ -773,3 +773,5 @@ h3 { font-size: clamp(1.05rem, 3vw, 1.5rem); }
     border-color: rgba(27, 59, 43, 0.35) !important;
     color: #1b3b2b !important;
 }
+/* CSS layout tuning - 2026-04-16 */
+.u-spacer-40 { height: 13px; }
