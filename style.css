@@ -775,3 +775,7 @@ h3 { font-size: clamp(1.05rem, 3vw, 1.5rem); }
 }
 /* CSS layout tuning - 2026-04-16 */
 .u-spacer-40 { height: 13px; }
+
+html { scroll-behavior: smooth; }
+.scroll-animated { opacity: 0; transition: all 0.6s ease; }
+.scroll-animated.visible { opacity: 1; }
