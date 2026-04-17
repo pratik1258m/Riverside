@@ -15,6 +15,10 @@ const navLinks = document.querySelectorAll('.nav-link');
 const revealItems = document.querySelectorAll('.reveal');
 const countItems = document.querySelectorAll('[data-count-target]');
 
+// Dynamic year for footer
+const currentYearEl = document.getElementById('current-year');
+if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ── Scroll handler (RAF-throttled, zero layout reflow) ─
@@ -348,3 +352,24 @@ if (track && slides.length > 0) {
     // Initialize layout (run once after images load)
     setTimeout(updateSlider, 100);
 }
+
+// ── WhatsApp Trigger Handler ────────────────────────
+/**
+ * Ensures WhatsApp links trigger the app correctly and handle 
+ * browser permission prompts smoothly, especially on mobile.
+ */
+const handleWhatsAppTrigger = (e) => {
+    const link = e.target.closest('[data-whatsapp-link]');
+    if (!link) return;
+
+    // On mobile, use window.location to avoid extra blank tabs 
+    // and trigger the "Open in WhatsApp" prompt directly.
+    if (window.innerWidth < 768) {
+        e.preventDefault();
+        const url = link.getAttribute('href');
+        window.location.href = url;
+    }
+    // On desktop, the default target="_blank" behavior is preferred
+};
+
+document.addEventListener('click', handleWhatsAppTrigger);
