@@ -1,0 +1,379 @@
+:root {
+    --forest: #29463a;
+    --forest-dark: #13221b;
+    --moss: #5f7458;
+    --clay: #aa7d52;
+    --sand: #ede4d4;
+    --cream: #f8f4ec;
+    --ink: #1f2924;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    background: radial-gradient(circle at top left, rgba(96,116,88,0.15), transparent 28%), radial-gradient(circle at right center, rgba(170,125,82,0.08), transparent 30%), linear-gradient(180deg, #f7f2e8 0%, #fbf8f2 40%, #eef3ed 100%);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Targeted performance hints ───────────────────────────────────── */
+/* Only apply will-change to elements we KNOW animate */
+.scroll-progress   { will-change: transform; transform-origin: left; }
+.mobile-booking-bar { will-change: transform; }
+.hero-media        { will-change: transform; }
+
+/* Touch feedback — lightweight, no spring (spring causes iOS jitter) */
+a:active, button:active { opacity: 0.8; }
+
+/* Promote glass overlays to own compositor layer to avoid paint cost */
+.glass-card, .nav-shell { transform: translateZ(0); }
+
+img, video, iframe { max-width: 100%; }
+
+h1 { font-size: clamp(1.7rem, 5.5vw, 3.75rem); }
+h2 { font-size: clamp(1.35rem, 4.5vw, 2.5rem); }
+h3 { font-size: clamp(1.05rem, 3vw, 1.5rem); }
+
+.hero-overlay {
+    /* Strong bottom-fade for mobile (content anchors bottom); lighter overall */
+    background:
+        linear-gradient(to top, rgba(7,12,10,0.92) 0%, rgba(12,20,16,0.65) 35%, rgba(19,34,27,0.20) 65%, transparent 100%),
+        linear-gradient(115deg, rgba(12,18,15,0.60) 0%, rgba(24,37,31,0.30) 50%, transparent 100%);
+}
+
+.hero-vignette {
+    background: radial-gradient(circle at center, transparent 35%, rgba(7,10,9,0.28) 100%);
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.24);
+    backdrop-filter: blur(16px);
+}
+
+.hero-media { will-change: transform; }
+
+@media (min-width: 768px) {
+    .hero-media { transform: scale(1.03); }
+}
+
+.pulse-ring { animation: pulse-ring 2s infinite; }
+
+.floating-label {
+    box-shadow: 0 12px 30px rgba(37,211,102,0.30);
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    right: max(1.25rem, env(safe-area-inset-right));
+}
+
+.floating-label-text { display: none; }
+
+@media (min-width: 768px) {
+    .floating-label-text { display: inline-block; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    will-change: opacity, transform;
+}
+
+@media (max-width: 767px) {
+    .reveal { transform: translateY(14px) scale(0.99); }
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.shine { position: relative; overflow: hidden; }
+
+.shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-130%);
+    background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.24) 45%, transparent 100%);
+    transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+.shine:hover::after { transform: translateX(130%); }
+
+.nav-shell {
+    transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.nav-shell.nav-scrolled {
+    background: rgba(19,34,27,0.60);
+    border-color: rgba(255,255,255,0.16);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 14px 36px rgba(12,18,15,0.16);
+}
+
+.nav-link { position: relative; }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.45rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background: rgba(255,255,255,0.95);
+    transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); }
+
+@keyframes orb-float {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -40px) scale(1.05); }
+    66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+.orb { 
+    filter: blur(50px); 
+    opacity: 0.45; 
+}
+
+@media (min-width: 768px) {
+    .orb {
+        animation: orb-float 18s ease-in-out infinite;
+        will-change: transform;
+    }
+}
+
+.stat-card, .feature-card, .review-card, .booking-card, .contact-card, .trust-card, .gallery-card {
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+    will-change: transform;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .stat-card:hover, .feature-card:hover, .review-card:hover, .booking-card:hover, .contact-card:hover, .trust-card:hover, .gallery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 50px rgba(31,41,36,0.13);
+    }
+}
+
+.gallery-image {
+    transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    will-change: transform;
+}
+
+@media (hover: hover) {
+    .gallery-card:hover .gallery-image { transform: scale(1.08); }
+}
+
+.scroll-progress {
+    transform-origin: left center;
+    will-change: transform;
+}
+
+.lightbox {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.mobile-menu-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+}
+
+.clickable-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(41,70,58,0.2);
+    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.clickable-phone:hover {
+    text-decoration-color: var(--forest);
+    transform: translateX(4px);
+}
+
+::selection {
+    background: rgba(41,70,58,0.22);
+    color: var(--forest-dark);
+}
+
+@keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+    70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.mobile-booking-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(41,70,58,0.1);
+    padding: 0.875rem 1.25rem;
+    padding-bottom: max(0.875rem, env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 30px rgba(31,41,36,0.1);
+    transform: translateY(100%);
+    transition: transform 0.42s cubic-bezier(0.16,1,0.3,1);
+}
+
+.mobile-booking-bar.bar-visible { transform: translateY(0); }
+
+@media (min-width: 768px) {
+    .mobile-booking-bar { display: none; }
+}
+
+.swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--moss);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.65;
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 768px) { .swipe-hint { display: none; } }
+
+/* ===== MOBILE-ONLY FIXES (max-width: 767px) ===== */
+@media (max-width: 767px) {
+
+    /* 1. Hide floating WhatsApp FAB on mobile — the booking bar handles CTA instead */
+    /* Use strong selector (tag + attribute) to beat Tailwind utility classes */
+    a[data-testid="floating-whatsapp-button"],
+    a[data-testid="floating-whatsapp-button"].pulse-ring {
+        display: none !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+    }
+
+    /* 2. Gallery horizontal carousel */
+    .gallery-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.75rem;
+        padding-bottom: 0.5rem;
+        /* Safe negative margins to align to screen edges but constrained by section overflow */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+    .gallery-grid::-webkit-scrollbar { display: none; }
+    .gallery-grid > figure {
+        flex: 0 0 85vw;
+        scroll-snap-align: start;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    /* Force consistent heights in horizontal slider to prevent layout jumping */
+    .gallery-grid > figure > button {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery-grid > figure .overflow-hidden {
+        flex: 1; /* Stretch image wrapper to fill space evenly */
+        min-height: 250px;
+    }
+
+    /* 3. Reviews horizontal carousel */
+    .reviews-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 1rem;
+        padding-left: 1rem;
+        padding-right: 1.25rem;
+        padding-bottom: 0.75rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+    .reviews-grid::-webkit-scrollbar { display: none; }
+    .reviews-grid > article {
+        flex: 0 0 87vw;
+        scroll-snap-align: start;
+    }
+
+    /* 4. Hero CTA buttons stack and go full-width */
+    .hero-cta-group { flex-direction: column; }
+    .hero-cta-group a { width: 100%; text-align: center; justify-content: center; }
+
+    /* 5. Lightbox adapts to small screens */
+    [data-lightbox] { padding: 0.625rem; }
+    [data-lightbox-image] { height: 58vh; }
+
+    /* 6. Footer clears the slide-up booking bar height */
+    footer {
+        padding-bottom: calc(5.5rem + max(0.875rem, env(safe-area-inset-bottom))) !important;
+    }
+
+    /* 7. Reduce excessive border-radius on small cards */
+    .review-card,
+    .contact-card,
+    .stat-card {
+        border-radius: 1.25rem;
+    }
+}
+
+/* ── Reduced-motion: disable ALL animation for accessibility + perf ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .hero-media { transform: none !important; }
+    .reveal     { opacity: 1; transform: none; }
+}
