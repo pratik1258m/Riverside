@@ -417,3 +417,16 @@ if (track && slides.length > 0) {
     // Initialize layout
     document.addEventListener('DOMContentLoaded', updateSlider);
 }
+
+function initLazyLoading() {
+  const images = document.querySelectorAll('img[data-src]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.dataset.src;
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  images.forEach(img => observer.observe(img));
+}
