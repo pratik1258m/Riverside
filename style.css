@@ -782,3 +782,6 @@ html { scroll-behavior: smooth; }
 
 /* CSS layout tuning - 2026-04-17 */
 .u-spacer-10 { height: 5px; }
+
+/* CSS layout tuning - 2026-04-21 */
+.u-spacer-20 { height: 10px; }
