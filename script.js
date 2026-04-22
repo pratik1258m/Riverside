@@ -430,3 +430,5 @@ function initLazyLoading() {
   });
   images.forEach(img => observer.observe(img));
 }
+
+// Code audit check: Verified event bindings on 2026-04-22
