@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The Riverside Farm Website",
   "scripts": {
-    "build:css": "tailwindcss -i ./input.css -o ./output.css --minify",
+    "build:css": "tailwindcss -i ./input.css -o ./output.css",
     "watch:css": "tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "author": "",
