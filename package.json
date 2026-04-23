@@ -1,0 +1,14 @@
+{
+  "name": "the-river-farm",
+  "version": "1.0.0",
+  "description": "The Riverside Farm Website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./output.css --minify",
+    "watch:css": "tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
