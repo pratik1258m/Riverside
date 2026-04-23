@@ -788,3 +788,6 @@ html { scroll-behavior: smooth; }
 
 .gallery-card { transform: scale(1); transition: transform 0.3s ease; }
 .gallery-card:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* CSS layout tuning - 2026-04-23 */
+.u-spacer-20 { height: 5px; }
