@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "The Riverside Farm Website",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp index.html style.css script.js robots.txt sitemap.xml dist/ && cp -r assets dist/ && tailwindcss -i ./input.css -o ./dist/output.css --minify",
+    "build": "rm -rf dist && mkdir -p dist && cp index.html style.css script.js robots.txt sitemap.xml google2b3cc2f424aa92a5.html dist/ && cp -r assets dist/ && tailwindcss -i ./input.css -o ./dist/output.css --minify",
     "build:css": "tailwindcss -i ./input.css -o ./output.css",
     "watch:css": "tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "basic-ftp": "^5.3.0",
     "tailwindcss": "^3.4.19"
   }
 }

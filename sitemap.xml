@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://theriversidefarm.com/</loc>
-        <lastmod>2026-04-23</lastmod>
+        <lastmod>2026-04-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/images/farm_6.webp</image:loc>
+            <image:title>The Riverside Farm - Lush green landscape and river view</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/images/farm_1.webp</image:loc>
+            <image:title>Cozy farm cottage at The Riverside Farm</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/images/farm_3.webp</image:loc>
+            <image:title>Rain dance and mist pool fun at The Riverside Farm</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/images/farm_7.webp</image:loc>
+            <image:title>Outdoor swimming pool at The Riverside Farm</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/images/farm_8.webp</image:loc>
+            <image:title>Resort-style swimming pool surrounded by greenery</image:title>
+        </image:image>
     </url>
 </urlset>
