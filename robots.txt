@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theriversidefarm.in/sitemap.xml
+Sitemap: https://theriversidefarm.com/sitemap.xml
