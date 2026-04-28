@@ -440,3 +440,14 @@ function initLazyLoading() {
 // Code audit check: Verified event bindings on 2026-04-24
 
 // Code audit check: Verified event bindings on 2026-04-27
+
+class ImageCarousel {
+  constructor(elementId, interval = 5000) {
+    this.carousel = document.getElementById(elementId);
+    this.interval = interval;
+    this.init();
+  }
+  init() {
+    setInterval(() => this.nextSlide(), this.interval);
+  }
+}
