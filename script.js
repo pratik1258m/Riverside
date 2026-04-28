@@ -451,3 +451,5 @@ class ImageCarousel {
     setInterval(() => this.nextSlide(), this.interval);
   }
 }
+
+// Code audit check: Verified event bindings on 2026-04-28
