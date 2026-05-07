@@ -803,3 +803,6 @@ html { scroll-behavior: smooth; }
 
 /* CSS layout tuning - 2026-05-06 */
 .u-spacer-30 { height: 12px; }
+
+/* CSS layout tuning - 2026-05-07 */
+.u-spacer-20 { height: 10px; }
