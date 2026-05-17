@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://theriversidefarm.com/</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-6.jpeg</image:loc>
+            <image:title>The Riverside Farm Wada — lush green riverside landscape in Palghar, Maharashtra</image:title>
+            <image:caption>The Riverside Farm Wada, Palghar — a farm stay beside the Vaitarna River</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-8.jpeg</image:loc>
+            <image:title>The Riverside Farm Wada — resort-style swimming pool surrounded by greenery</image:title>
+            <image:caption>Swimming pool at The Riverside Farm Wada, Palghar, Maharashtra</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-1.jpeg</image:loc>
+            <image:title>The Riverside Farm — cozy farm cottage nestled in greenery, Wada Palghar</image:title>
+            <image:caption>Farm cottage accommodation at The Riverside Farm Wada</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-3.jpeg</image:loc>
+            <image:title>Rain dance and mist pool fun at The Riverside Farm Wada</image:title>
+            <image:caption>Guests enjoying rain dance activities at The Riverside Farm Wada, Palghar</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-4.jpeg</image:loc>
+            <image:title>Panoramic landscape at The Riverside Farm Wada, Palghar district, Maharashtra</image:title>
+            <image:caption>Open countryside landscape at The Riverside Farm near Mumbai</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-7.jpeg</image:loc>
+            <image:title>The Riverside Farm — outdoor pool area with tropical greenery</image:title>
+            <image:caption>Poolside experience at The Riverside Farm Wada, Palghar</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-2.jpeg</image:loc>
+            <image:title>The Riverside Farm — bedroom interior with air conditioning</image:title>
+            <image:caption>Comfortable accommodation at The Riverside Farm Wada near Mumbai</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://theriversidefarm.com/assets/farm-5.jpeg</image:loc>
+            <image:title>The Riverside Farm — spacious dining and lounge area</image:title>
+            <image:caption>Warm interiors and home-style dining at The Riverside Farm Wada</image:caption>
+        </image:image>
+    </url>
+</urlset>
